@@ -30,6 +30,7 @@ class handler(BaseHTTPRequestHandler):
             resp += f'{difficulty}: {completed} solution{plural_c} accepted in {submissions} attempt{plural_s}\n'
     else:
         resp = f'API could not find Leetcode account \"{username}\"'
+        print('error code: ',r.status_code)
 
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
